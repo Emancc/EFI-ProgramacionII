@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Recetas | Tia Luci</title>
+    <link rel="icon" href="./assets/images/cocinero.png">
+</head>
+<body class="bg-gray-200 min-h-screen flex flex-col">
+    <!-- Mobile menu button -->
+    <button id="mobileMenuButton" class="md:hidden fixed top-4 right-4 z-50 p-2 bg-orange-500 text-white rounded-full shadow-lg">
+        <i class="fa-solid fa-bars text-xl"></i>
+    </button>
+
+    <main class="flex flex-1 overflow-hidden flex-col md:flex-row">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="bg-orange-400 text-white md:m-2 md:rounded-md w-full md:w-64 lg:w-72 xl:w-80 p-4 fixed md:static inset-0 z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto">
+            <div class="h-full flex flex-col">
+                <!-- Encabezado del menú -->
+                <div class="flex-shrink-0">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <img src="./assets/images/cocinero.png" alt="Tía Luci" class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full shadow-lg">
+                            <h2 class="text-lg md:text-xl font-bold ml-4">RECETAS TIA LUCI</h2>
+                        </div>
+                        <button id="closeMenu" class="md:hidden text-2xl text-white hover:text-orange-100">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Menú de navegación -->
+                <nav class="mt-6 flex-1">
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="index.html" class="flex items-center p-3 rounded-lg transition-colors hover:bg-orange-500 text-gray-200 hover:text-white">
+                                <i class="fa-solid fa-magnifying-glass w-6 text-center"></i>
+                                <span class="ml-3 text-sm md:text-base">Buscar</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="flex items-center p-3 rounded-lg bg-orange-500 text-white font-semibold">
+                                <i class="fa-solid fa-circle-info w-6 text-center"></i>
+                                <span class="ml-3 text-sm md:text-base">Sobre</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="challenges.html" class="flex items-center p-3 rounded-lg transition-colors hover:bg-orange-500 text-gray-200 hover:text-white">
+                                <i class="fa-solid fa-trophy w-6 text-center"></i>
+                                <span class="ml-3 text-sm md:text-base">Desafíos</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="collection.html" class="flex items-center p-3 rounded-lg transition-colors hover:bg-orange-500 text-gray-200 hover:text-white">
+                                <i class="fa-solid fa-heart w-6 text-center"></i>
+                                <span class="ml-3 text-sm md:text-base">Tu Colección</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Texto inferior (solo en desktop) -->
+                <p class="hidden md:block text-xs md:text-sm text-orange-100 text-center mt-auto pt-4 px-2">
+                    Comparte tus creaciones culinarias con nuestra comunidad
+                </p>
+            </div>
+        </aside>
+
+        <!-- Overlay for mobile -->
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+        <!-- Main Content -->
+        <section class="bg-white md:m-2 md:rounded-lg flex-1 overflow-y-auto mt-16 md:mt-0">
+            <div class="p-4 sm:p-6 md:p-8">
+            <header class="border-b pb-4 mb-6">
+                <h1 class="text-3xl font-bold text-orange-500">Crear Nueva Receta</h1>
+                <p class="text-gray-600">Comparte tu receta con la comunidad de Tia Luci</p>
+            </header>
+
+            <!-- Formulario de receta -->
+            <form class="space-y-6 md:space-y-8 lg:space-y-10">
+                <!-- Sección de imagen y detalles básicos -->
+                <div class="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-10">
+                    <!-- Subida de imagen -->
+                    <div class="w-full md:w-1/3 lg:w-1/4">
+                        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-orange-400 transition-colors">
+                            <div class="flex flex-col items-center justify-center h-64 bg-gray-50 rounded-md">
+                                <i class="fa-solid fa-image text-5xl text-gray-300 mb-3"></i>
+                                <p class="text-gray-500 font-medium">Haz clic para subir una imagen</p>
+                                <p class="text-sm text-gray-400 mt-1">Recomendado: 800x600px</p>
+                            </div>
+                            <input type="file" class="hidden" accept="image/*">
+                        </div>
+                    </div>
+
+                    <!-- Detalles de la receta -->
+                    <div class="flex-1 space-y-4 md:space-y-6 lg:space-y-8">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Nombre de la receta</label>
+                            <input type="text" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-400 focus:border-transparent" placeholder="Ej: Tarta de manzana vegana">
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-1">Tiempo</label>
+                                <div class="relative">
+                                    <input type="text" class="w-full p-2 border border-gray-300 rounded-md pl-10" placeholder="30 min">
+                                    <i class="fa-regular fa-clock absolute left-3 top-3 text-gray-400"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-1">Porciones</label>
+                                <div class="relative">
+                                    <input type="text" class="w-full p-2 border border-gray-300 rounded-md pl-10" placeholder="4">
+                                    <i class="fa-solid fa-utensils absolute left-3 top-3 text-gray-400"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-1">Dificultad</label>
+                                <select class="w-full p-2 border border-gray-300 rounded-md">
+                                    <option>Fácil</option>
+                                    <option>Media</option>
+                                    <option>Difícil</option>
+                                    <option>Extrema</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">Categoría</label>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
+                                    <i class="fa-solid fa-utensils mr-1"></i> Principal
+                                    <button class="ml-2 text-orange-500 hover:text-orange-700">×</button>
+                                </span>
+                                <button class="text-orange-500 hover:text-orange-700 text-sm flex items-center">
+                                    <i class="fa-solid fa-plus mr-1"></i> Añadir categoría
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ingredientes -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fa-solid fa-list-check text-orange-500 mr-2"></i>
+                        Ingredientes
+                    </h2>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex gap-2">
+                            <input type="text" class="flex-1 p-2 border border-gray-300 rounded-md" placeholder="Ej: 2 tazas de harina">
+                            <button type="button" class="px-3 bg-orange-500 text-white rounded-md hover:bg-orange-600">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="bg-white p-3 rounded-md border flex justify-between items-center">
+                            <span>1 cucharada de aceite de oliva</span>
+                            <button class="text-red-400 hover:text-red-600">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="bg-white p-3 rounded-md border flex justify-between items-center">
+                            <span>3 dientes de ajo picados</span>
+                            <button class="text-red-400 hover:text-red-600">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instrucciones -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fa-solid fa-list-ol text-orange-500 mr-2"></i>
+                        Instrucciones
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <span class="bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">1</span>
+                            <textarea class="flex-1 p-2 border border-gray-300 rounded-md h-20" placeholder="Describe el primer paso de la receta"></textarea>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="bg-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">2</span>
+                            <textarea class="flex-1 p-2 border border-gray-300 rounded-md h-20" placeholder="Describe el segundo paso"></textarea>
+                        </div>
+                        <button type="button" class="text-orange-500 hover:text-orange-700 text-sm flex items-center">
+                            <i class="fa-solid fa-plus mr-1"></i> Añadir paso
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notas adicionales -->
+                <div>
+                    <label class="block text-gray-700 font-medium mb-1">Notas adicionales</label>
+                    <textarea class="w-full p-3 border border-gray-300 rounded-md h-24" placeholder="¿Algún consejo, variante o información nutricional que quieras compartir?"></textarea>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="flex justify-end gap-3 pt-4 border-t">
+                    <button type="button" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50">
+                        Descartar
+                    </button>
+                    <button type="submit" class="px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 flex items-center">
+                        <i class="fa-solid fa-upload mr-2"></i>
+                        Publicar receta
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Columna 1: Logo y descripción -->
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <img src="./assets/images/cocinero.png" alt="Recetas Tía Luci" class="h-12 mr-3">
+                        <h3 class="text-2xl font-bold">Recetas Tía Luci</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">Tu guía culinaria favorita con las mejores recetas caseras y tradicionales. Inspiramos a cocineros de todos los niveles.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-orange-400 hover:text-white transition">
+                            <i class="fab fa-app-store-ios text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-orange-400 hover:text-white transition">
+                            <i class="fab fa-google-play text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Enlaces rápidos -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-orange-400">Explorar</h4>
+                    <ul class="space-y-2">
+                        <li><a href="recetas.html" class="text-gray-300 hover:text-white transition">Todas las recetas</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition">Categorías</a></li>
+                        <li><a href="challenges.html" class="text-gray-300 hover:text-white transition">Desafíos</a></li>
+                        <li><a href="collection.html" class="text-gray-300 hover:text-white transition">Colecciones</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-orange-400">Contacto</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-orange-400"></i>
+                            <span class="text-gray-300">Av. San Martin 3028, Rio Cuarto, Cordoba</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-orange-400"></i>
+                            <span class="text-gray-300">+54 358 1234-5678</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-orange-400"></i>
+                            <span class="text-gray-300">hola@recetastialuci.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-3 text-orange-400"></i>
+                            <span class="text-gray-300">Lun-Vie: 9:00 - 18:00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Newsletter -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-orange-400">Newsletter</h4>
+                    <p class="text-gray-300 text-sm mb-4">Suscríbete para recibir las mejores recetas en tu correo.</p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Tu correo electrónico" class="w-full px-4 py-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-md transition">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">© 2025 Recetas Tía Luci. Todos los derechos reservados.</p>
+                    <div class="flex space-x-4 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-white transition text-sm">Términos de servicio</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-sm">Política de privacidad</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="#" class="text-gray-400 hover:text-white transition text-sm">Aviso legal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para el menú móvil -->
+    <script src="./assets/js/mobile-menu.js"></script>
+</body>
+</html>

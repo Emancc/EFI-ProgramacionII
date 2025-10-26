@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Desafíos | Recetas Tia Luci</title>
+    <link rel="icon" href="./assets/images/cocinero.png">
+</head>
+<body class="bg-gray-200 min-h-screen flex flex-col">
+    <!-- Mobile menu button -->
+    <button id="mobileMenuButton" class="md:hidden fixed top-4 right-4 z-50 p-2 bg-orange-500 text-white rounded-full shadow-lg">
+        <i class="fa-solid fa-bars text-xl"></i>
+    </button>
+    
+    <!-- Overlay for mobile menu -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+    <main class="flex flex-1 overflow-hidden flex-col md:flex-row">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="bg-orange-400 text-white md:m-2 md:rounded-md w-full md:w-64 lg:w-72 xl:w-80 p-4 fixed md:static inset-0 z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+            <div class="flex flex-col h-full">
+                <!-- Header del menú móvil -->
+                <div class="flex items-center justify-between md:block">
+                    <div class="flex items-center">
+                        <img src="./assets/images/cocinero.png" alt="Tía Luci" class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full shadow-lg">
+                        <h2 class="text-lg md:text-xl font-bold ml-4">RECETAS TIA LUCI</h2>
+                    </div>
+                    <button id="closeMenu" class="md:hidden text-2xl text-white">&times;</button>
+                </div>
+                
+                <!-- Navegación -->
+                <nav class="mt-6 flex-1">
+                    <ul class="space-y-2 md:space-y-3">
+                        <li><a href="index.html" class="flex items-center text-gray-200 hover:bg-orange-500 rounded-lg p-3 transition-colors"><i class="fa-solid fa-magnifying-glass w-6 text-center"></i><span class="ml-3 text-sm md:text-base">Buscar</span></a></li>
+                        <li><a href="about.html" class="flex items-center text-gray-200 hover:bg-orange-500 rounded-lg p-3 transition-colors"><i class="fa-solid fa-circle-info w-6 text-center"></i><span class="ml-3 text-sm md:text-base">Sobre</span></a></li>
+                        <li><a href="challenges.html" class="flex items-center text-white font-semibold bg-orange-500 rounded-lg p-3"><i class="fa-solid fa-trophy w-6 text-center"></i><span class="ml-3 text-sm md:text-base">Desafíos</span></a></li>
+                        <li><a href="collection.html" class="flex items-center text-gray-200 hover:bg-orange-500 rounded-lg p-3 transition-colors"><i class="fa-solid fa-heart w-6 text-center"></i><span class="ml-3 text-sm md:text-base">Tu Colección</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="hidden md:block text-xs md:text-sm text-orange-100 text-center mt-6 px-2">Participa en nuestros desafíos culinarios y descubre nuevas formas de sorprender en la cocina.</p>
+        </aside>
+
+        <!-- Overlay for mobile -->
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+        <!-- Main Content -->
+        <section class="bg-white md:m-2 md:rounded-lg flex-1 overflow-y-auto mt-16 md:mt-0">
+            <div class="p-4 sm:p-6 md:p-8">
+            <!-- Encabezado -->
+            <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 mb-6 border-b gap-4">
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-orange-500">Desafíos Culinarios</h1>
+                    <p class="text-gray-600 text-sm sm:text-base">Participa, aprende y gana premios increíbles</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                    <a href="formulario.html" class="w-full sm:w-auto">
+                        <button class="w-full sm:w-auto px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 text-sm sm:text-base transition-colors">
+                            Iniciar Sesión
+                        </button>
+                    </a>
+                    <a href="recetas.html" class="w-full sm:w-auto">
+                        <button class="w-full sm:w-auto px-4 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 flex items-center justify-center text-sm sm:text-base transition-colors">
+                            <i class="fa-solid fa-plus mr-2"></i> Crear receta
+                        </button>
+                    </a>
+                </div>
+            </header>
+
+            <!-- Banner de desafío destacado -->
+            <div class="bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl p-6 mb-8 border border-orange-100">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <div class="relative w-full md:w-1/3">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" alt="Desafío destacado" class="w-full h-48 object-cover rounded-lg shadow-md">
+                        <span class="absolute top-3 right-3 bg-white text-orange-500 text-xs font-bold px-3 py-1 rounded-full shadow">¡Nuevo!</span>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h2 class="text-2xl font-bold text-orange-500 mb-2">Desafío de la Semana</h2>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Postres sin Horno</h3>
+                        <p class="text-gray-600 mb-4">Demuestra tu creatividad preparando un postre delicioso sin necesidad de horno. ¡Los mejores recibirán premios increíbles!</p>
+                        <div class="flex flex-col sm:flex-row gap-3 items-center justify-between">
+                            <div class="flex items-center text-sm text-gray-600">
+                                <i class="far fa-calendar-alt mr-2 text-orange-500"></i>
+                                <span>Hasta el 02/11/2025</span>
+                            </div>
+                            <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-colors w-full sm:w-auto">
+                                Participar ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Desafíos Activos -->
+            <section class="mb-8 sm:mb-10">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 sm:mb-6 gap-3">
+                    <h2 class="text-lg sm:text-xl font-bold text-gray-800 flex items-center">
+                        <i class="fa-solid fa-fire text-orange-500 mr-2"></i>
+                        Desafíos Activos
+                    </h2>
+                    <a href="#" class="text-sm text-orange-500 hover:underline whitespace-nowrap">Ver todos</a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Desafío 1 -->
+                    <div class="border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" alt="Receta vegetariana" class="w-full h-48 object-cover">
+                            <div class="absolute top-3 right-3">
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">En curso</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-bold text-gray-900">Reto Vegetariano</h3>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users text-gray-400 text-sm mr-1"></i>
+                                    <span class="text-gray-600 text-sm">245 participantes</span>
+                                </div>
+                            </div>
+                            <h4 class="text-orange-500 font-medium mb-3">Plato Principal Veggie</h4>
+                            <p class="text-gray-600 text-sm mb-4">Sorpréndenos con un plato vegetariano que sea el protagonista de cualquier mesa. ¡Los ingredientes son tu límite!</p>
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="far fa-clock mr-1"></i>
+                                    <span>Termina en 5 días</span>
+                                </div>
+                                <button class="text-orange-500 hover:text-orange-600 font-medium text-sm flex items-center">
+                                    Ver detalles
+                                    <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desafío 2 -->
+                    <div class="border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                        <div class="relative">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600&auto=format&fit=crop" alt="Receta saludable" class="w-full h-48 object-cover">
+                            <div class="absolute top-3 right-3">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Próximamente</span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-lg font-bold text-gray-900">Cocina Saludable</h3>
+                                <div class="flex items-center">
+                                    <i class="fas fa-users text-gray-400 text-sm mr-1"></i>
+                                    <span class="text-gray-600 text-sm">Próximamente</span>
+                                </div>
+                            </div>
+                            <h4 class="text-orange-500 font-medium mb-3">Desayunos Energéticos</h4>
+                            <p class="text-gray-600 text-sm mb-4">Prepara el desayuno perfecto que te cargue de energía para todo el día, usando solo ingredientes saludables.</p>
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="far fa-clock mr-1"></i>
+                                    <span>Inicia en 3 días</span>
+                                </div>
+                                <button class="text-orange-500 hover:text-orange-600 font-medium text-sm flex items-center opacity-50 cursor-not-allowed" disabled>
+                                    Próximamente
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Desafíos Anteriores -->
+            <section class="mb-10">
+                <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fa-solid fa-trophy text-orange-500 mr-2"></i>
+                    Desafíos Anteriores
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Desafío anterior 1 -->
+                    <div class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="h-32 bg-gray-100 relative">
+                            <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=749" alt="Postres fríos" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <span class="bg-white text-orange-500 text-xs font-bold px-3 py-1 rounded-full">Finalizado</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-800">Postres Fríos de Verano</h3>
+                            <p class="text-gray-500 text-sm mt-1">Finalizado el 15/10/2025</p>
+                            <button class="mt-3 text-orange-500 hover:text-orange-600 text-sm font-medium">
+                                Ver ganadores
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Desafío anterior 2 -->
+                    <div class="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="h-32 bg-gray-100 relative">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1981" alt="Cocina internacional" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <span class="bg-white text-orange-500 text-xs font-bold px-3 py-1 rounded-full">Finalizado</span>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-gray-800">Sabores del Mundo</h3>
+                            <p class="text-gray-500 text-sm mt-1">Finalizado el 30/09/2025</p>
+                            <button class="mt-3 text-orange-500 hover:text-orange-600 text-sm font-medium">
+                                Ver ganadores
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Ver más -->
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center p-6 text-center hover:border-orange-300 transition-colors">
+                        <i class="fa-solid fa-ellipsis text-gray-300 text-3xl mb-3"></i>
+                        <h3 class="font-medium text-gray-600">Más desafíos</h3>
+                        <p class="text-sm text-gray-500 mt-1">Descubre todos nuestros desafíos anteriores</p>
+                        <a href="#" class="mt-3 text-orange-500 text-sm font-medium hover:underline">Ver todos</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Premios -->
+            <section class="bg-orange-50 rounded-xl p-6 mb-10 border border-orange-100">
+                <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fa-solid fa-gift text-orange-500 mr-2"></i>
+                    Premios y Beneficios
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-2xl mx-auto mb-3">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">Reconocimiento</h3>
+                        <p class="text-gray-600 text-sm">Destaca tu perfil y gana visibilidad en nuestra comunidad de amantes de la cocina.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-2xl mx-auto mb-3">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">Premios Exclusivos</h3>
+                        <p class="text-gray-600 text-sm">Recibe productos de cocina, libros de recetas y más de nuestros patrocinadores.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-2xl mx-auto mb-3">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">Comunidad</h3>
+                        <p class="text-gray-600 text-sm">Conecta con otros participantes y comparte experiencias culinarias.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA -->
+            <section class="flex-1 mt-16 md:mt-0 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 gap-6">
+                <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl p-8 text-white text-center">
+                    <h2 class="text-2xl font-bold mb-3">¿Listo para el desafío?</h2>
+                    <p class="mb-6 max-w-2xl mx-auto">Únete a nuestra comunidad de cocineros apasionados y lleva tus habilidades al siguiente nivel.</p>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                        <a href="#" class="px-6 py-3 bg-white text-orange-600 font-medium rounded-lg hover:bg-gray-100 transition-colors">
+                        Ver bases del concurso
+                        </a>
+                        <a href="formulario.html" class="px-6 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-colors">
+                        Regístrate para participar
+                        </a>
+                    </div>
+                </div>
+                <div class="flex-1 text-center md:text-left mt-6 md:mt-6 lg:mt-8 xl:mt-10">
+                    <h2 class="text-2xl font-bold text-orange-500 mb-2">Desafío de la Semana</h2>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Postres sin Horno</h3>
+                    <p class="text-gray-600 mb-4">Demuestra tu creatividad preparando un postre delicioso sin necesidad de horno. ¡Los mejores recibirán premios increíbles!</p>
+                    <div class="flex flex-col sm:flex-row gap-3 items-center justify-between">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="far fa-calendar-alt mr-2 text-orange-500"></i>
+                            <span>Hasta el 02/11/2025</span>
+                        </div>
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full font-medium transition-colors w-full sm:w-auto">
+                            Participar ahora
+                        </button>
+                    </div>
+                </div>
+            </section>
+    </main>
+
+<script src="assets/js/menu.js"></script>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Columna 1: Logo y descripción -->
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <img src="./assets/images/cocinero.png" alt="Recetas Tía Luci" class="h-12 mr-3">
+                    <h3 class="text-2xl font-bold">Recetas Tía Luci</h3>
+                </div>
+                <p class="text-gray-300 text-sm">Tu guía culinaria favorita con las mejores recetas caseras y tradicionales. Inspiramos a cocineros de todos los niveles.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-orange-400 hover:text-white transition">
+                        <i class="fab fa-app-store-ios text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-orange-400 hover:text-white transition">
+                        <i class="fab fa-google-play text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna 2: Enlaces rápidos -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-orange-400">Explorar</h4>
+                <ul class="space-y-2">
+                    <li><a href="recetas.html" class="text-gray-300 hover:text-white transition">Todas las recetas</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-white transition">Categorías</a></li>
+                    <li><a href="challenges.html" class="text-gray-300 hover:text-white transition">Desafíos</a></li>
+                    <li><a href="collection.html" class="text-gray-300 hover:text-white transition">Colecciones</a></li>
+                    <li><a href="about.html" class="text-gray-300 hover:text-white transition">Sobre nosotros</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Contacto -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-orange-400">Contacto</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-orange-400"></i>
+                        <span class="text-gray-300">Av. San Martin 3028, Rio Cuarto, Cordoba</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-phone-alt mr-3 text-orange-400"></i>
+                        <span class="text-gray-300">+54 358 1234-5678</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope mr-3 text-orange-400"></i>
+                        <span class="text-gray-300">hola@recetastialuci.com</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-clock mr-3 text-orange-400"></i>
+                        <span class="text-gray-300">Lun-Vie: 9:00 - 18:00</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: Newsletter -->
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-orange-400">Newsletter</h4>
+                <p class="text-gray-300 text-sm mb-4">Suscríbete para recibir las mejores recetas en tu correo.</p>
+                <form class="space-y-2">
+                    <input type="email" placeholder="Tu correo electrónico" class="w-full px-4 py-2 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-orange-400">
+                    <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-md transition">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-700 mt-8 pt-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm"> 2025 Recetas Tía Luci. Todos los derechos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition text-sm">Términos de servicio</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="#" class="text-gray-400 hover:text-white transition text-sm">Política de privacidad</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="#" class="text-gray-400 hover:text-white transition text-sm">Aviso legal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="./assets/js/index.js"></script>
+    </footer>
+</body>
+</html>

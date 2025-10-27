@@ -40,9 +40,9 @@ EFI-ProgramacionII/
 ├── about.html
 ├── challenges.html
 ├── collection.html
-├── formulario.html
+├── form.html
 ├── index.html
-├── recetas.html
+├── recipes.html
 └── README.md
 ```
 

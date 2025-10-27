@@ -15,7 +15,20 @@
 - **Verde Éxito**: `#10B981` (Acciones positivas)
 - **Rojo Alerta**: `#EF4444` (Errores y advertencias)
 
-### 2. 🖋️ Tipografía
+### 2. 📱 Redes Sociales y Contacto
+
+#### Canales Oficiales
+- **Correo Electrónico**: [tialucicocina@gmail.com](mailto:tialucicocina@gmail.com)
+- **Facebook**: [Tía Luci Cocina](https://www.facebook.com/profile.php?id=61582620225361)
+- **Instagram**: [@tialucicocina](https://www.instagram.com/tialucicocina/)
+- **YouTube**: [Canal de Tía Luci](https://www.youtube.com/channel/UCviKeqjsi0gfui2y_2-I3gg)
+- **Formulario de Feedback**: [Encuesta de Satisfacción](https://my.forms.app/templateses/encuesta-de-feedback?draftId=260f8c16821988)
+
+#### Horario de Atención
+- **Lunes a Viernes**: 9:00 - 18:00
+- **Sábados y Domingos**: Cerrado
+
+### 3. 🖋️ Tipografía
 
 #### Fuente Principal: "Poppins"
 - **Títulos**: Semibold 700
@@ -30,7 +43,7 @@
 - **Cuerpo**: 1rem (16px)
 - **Texto pequeño**: 0.875rem (14px)
 
-### 3. 🎭 Logotipo
+### 4. 🎭 Logotipo
 
 #### Versiones
 - **Primario**: Logotipo completo "Recetas Tía Luci" con ícono

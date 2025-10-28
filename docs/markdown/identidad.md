@@ -151,4 +151,3 @@
 
 ---
 
-*Última actualización: Octubre 2025*

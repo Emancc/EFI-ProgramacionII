@@ -10,19 +10,15 @@
     <link rel="icon" href="./assets/images/icons/cocinero.png">
 </head>
 <body class="bg-gray-200 min-h-screen flex flex-col">
-    <!-- Mobile menu button -->
     <button id="mobileMenuButton" class="md:hidden fixed top-4 right-4 z-50 p-2 bg-orange-500 text-white rounded-full shadow-lg w-10 h-10">
         <i class="fa-solid fa-bars text-xl"></i>
     </button>
     
-    <!-- Overlay for mobile menu -->
     <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
 
     <main class="flex flex-1 overflow-hidden flex-col md:flex-row">
-        <!-- Sidebar -->
         <aside id="sidebar" class="bg-orange-400 text-white md:m-2 md:rounded-md w-full md:w-64 lg:w-72 xl:w-80 p-4 fixed md:static inset-0 z-40 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
             <div class="flex flex-col h-full">
-                <!-- Header del menú móvil -->
                 <div class="flex items-center justify-center md:block">
                     <div class="flex items-center">
                         <img src="./assets/images/icons/cocinero-minimalist.png" alt="Tía Luci" class="w-32 h-32 md:w-24 md:h-24 lg:w-32 lg:h-32 rounded-full shadow-lg">
@@ -31,7 +27,6 @@
                     <button id="closeMenu" class="hidden text-2xl text-white">&times;</button>
                 </div>
                 
-                <!-- Navegación -->
                 <nav class="mt-6 flex-1">
                     <ul class="space-y-2 md:space-y-3">
                         <li><a href="index.html" class="flex items-center text-white font-semibold bg-orange-500 rounded-lg p-3"><i class="fa-solid fa-magnifying-glass w-6 text-center"></i><span class="ml-3 text-sm md:text-base">Buscar</span></a></li>
@@ -45,13 +40,10 @@
             <p class="hidden md:block text-xs md:text-sm text-orange-100 text-center mt-6 px-2">Recetas Tia Luci para que comiences a experimentar con tus ingredientes favoritos</p>
         </aside>
 
-        <!-- Overlay for mobile -->
         <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
-        <!-- Main Content -->
         <section class="bg-white md:m-2 md:rounded-lg flex-1 overflow-y-auto mt-16 md:mt-0">
             <div class="p-4 sm:p-6 md:p-8">
-            <!-- Encabezado -->
             <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 mb-6 border-b gap-4">
                 <div>
                     <h1 class="text-2xl sm:text-3xl font-bold text-orange-500">Bienvenido a Recetas Tia Luci</h1>
@@ -71,7 +63,6 @@
                 </div>
             </header>
 
-            <!-- Banner de bienvenida -->
             <div class="bg-gradient-to-r from-orange-100 to-orange-50 rounded-lg p-4 sm:p-6 mb-6 sm:mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="flex flex-col sm:flex-row items-center text-center sm:text-left">
                     <img class="w-20 h-20 sm:w-24 sm:h-24 object-cover rounded-full border-4 border-white shadow-md flex-shrink-0" 
@@ -91,7 +82,6 @@
                 </div>
             </div>
 
-            <!-- Barra de búsqueda -->
             <div class="mb-6 sm:mb-8">
                 <div class="relative max-w-2xl mx-auto">
                     <div class="relative">
@@ -106,7 +96,6 @@
                 </div>
             </div>
 
-            <!-- Categorías -->
             <section class="mb-8 sm:mb-10">
                 <div class="flex justify-between items-center mb-3 sm:mb-4">
                     <h2 class="text-lg sm:text-xl font-bold text-gray-800 flex items-center">
@@ -142,7 +131,6 @@
                 </div>
             </section>
 
-            <!-- Recetas destacadas -->
             <section class="mb-8 sm:mb-10">
                 <div class="flex justify-between items-center mb-3 sm:mb-4">
                     <h2 class="text-lg sm:text-xl font-bold text-gray-800 flex items-center">
@@ -153,7 +141,6 @@
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-                    <!-- Receta 1 -->
                     <div class="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div class="h-40 sm:h-44 md:h-48 bg-gray-200 relative">
                             <img src="https://images.pexels.com/photos/1639562/pexels-photo-1639562.jpeg" alt="Hamburguesa" class="w-full h-full object-cover">
@@ -183,7 +170,6 @@
                         </div>
                     </div>
 
-                    <!-- Receta 2 -->
                     <div class="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div class="h-40 sm:h-44 md:h-48 bg-gray-200 relative">
                             <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop" alt="Pasta" class="w-full h-full object-cover">
@@ -210,7 +196,6 @@
                         </div>
                     </div>
 
-                    <!-- Receta 3 -->
                     <div class="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div class="h-40 sm:h-44 md:h-48 bg-gray-200 relative">
                             <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=1000&auto=format&fit=crop" alt="Panqueques" class="w-full h-full object-cover">
@@ -240,7 +225,6 @@
                         </div>
                     </div>
 
-                    <!-- Receta 4 -->
                     <div class="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div class="h-40 sm:h-44 md:h-48 bg-gray-200 relative">
                             <img src="https://images.unsplash.com/photo-1476887334197-56adbf254e1a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687" alt="Hamburguesa" class="w-full h-full object-cover">
@@ -266,7 +250,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Receta 5 -->
                     <div class="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div class="h-40 sm:h-44 md:h-48 bg-gray-200 relative">
                             <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=781" alt="Hamburguesa" class="w-full h-full object-cover">
@@ -295,7 +278,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Receta 6 -->
                     <div class="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
                         <div class="h-40 sm:h-44 md:h-48 bg-gray-200 relative">
                             <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687" alt="Hamburguesa" class="w-full h-full object-cover">
@@ -334,11 +316,9 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Columna 1: Logo y descripción -->
                 <div class="space-y-4">
                     <div class="flex items-center">
                         <img src="./assets/images/icons/cocinero.png" alt="Recetas Tía Luci" class="h-12 mr-3">
@@ -355,7 +335,6 @@
                     </div>
                 </div>
 
-                <!-- Columna 2: Enlaces rápidos -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-orange-400">Explorar</h4>
                     <ul class="space-y-2">
@@ -367,7 +346,6 @@
                     </ul>
                 </div>
 
-                <!-- Columna 3: Contacto -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-orange-400">Contacto</h4>
                     <ul class="space-y-2">
@@ -402,7 +380,6 @@
                     </ul>
                 </div>
 
-                <!-- Columna 4: Newsletter -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-orange-400">Newsletter</h4>
                     <p class="text-gray-300 text-sm mb-4">Suscríbete para recibir las mejores recetas en tu correo.</p>

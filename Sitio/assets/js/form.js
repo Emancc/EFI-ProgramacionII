@@ -1,4 +1,3 @@
-// Toggle password visibility
 function togglePassword(fieldId) {
     const field = document.getElementById(fieldId);
     const icon = field.nextElementSibling.querySelector('i');
@@ -14,7 +13,6 @@ function togglePassword(fieldId) {
     }
 }
 
-// Form validation
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('registerForm');
     
@@ -30,9 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }
             
-            // Si llegamos aquí, el formulario es válido
             alert('¡Registro exitoso!');
-            // form.submit(); // Descomentar esta línea para enviar el formulario
         });
     }
 });

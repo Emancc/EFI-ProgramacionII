@@ -67,16 +67,16 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 ## 📅 Próximas Mejoras
 
-- [ ] Implementar sistema de búsqueda
-- [ ] Añadir más recetas y categorías
-- [ ] Crear sección de blog
-- [ ] Implementar sistema de comentarios
+-Implementar sistema de búsqueda
+-Añadir más recetas y categorías
+-Crear sección de blog
+-Implementar sistema de comentarios
 
 ## ✨ Créditos
 
-- **Diseño y Desarrollo**: [Tu Nombre]
-- **Fotografía**: [Nombre del Fotógrafo]
-- **Recetas**: Tía Luci y colaboradores
+- **Cepeda Cáceres Emanuel**
+- **Arballo Federico Ezequiel**
+- **Rodriguez  Joaquin Ramon**
 
 ---
 
